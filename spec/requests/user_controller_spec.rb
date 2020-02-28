@@ -29,35 +29,7 @@ RSpec.describe UsersController, type: :request do
       end
     end
   end
-  describe "getting user programs" do
-    subject { get "/users/#{user.id}/programs" } 
-    let(:user) { create(:user) }
-    context "when programs exists" do
-      before do
-        progs = create_list(:program, 10)
-        user.programs << progs
-        subject
-      end
-      it "should return array of users" do
-        body = JSON.parse(response.body)
-        expect(body).to be_a(Array)
-        body.each do |program|
-          expect(program).to be_a(Integer)
-        end
-      end
-    end
-    context "when programs not exists" do
-      before do
-        Program.delete_all 
-        subject
-      end
-      it "should return array of programs" do
-        body = JSON.parse(response.body)
-        expect(body).to be_a(Array)
-        expect(body).to be_empty
-      end
-    end
-  end
+
   describe "create new user" do
     subject { post "/users", params: parameters } 
     context "when parameters valid" do
