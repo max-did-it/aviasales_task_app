@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    render json: default_serializer.render(User.all, User.blueprint_options)
+    render json: default_serializer.render(User.all)
   end
 
   def create
