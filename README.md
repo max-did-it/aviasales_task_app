@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/max-did-it/aviasales_task_app.svg?branch=master)](https://travis-ci.com/max-did-it/aviasales_task_app)
 ## Dependencies
 
 * Docker
