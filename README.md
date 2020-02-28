@@ -12,7 +12,7 @@
 ## Prepare database 
 
 * `docker-compose up` (don't break it)
-* `docker exec aviasales_task_app_app bundle exec rails db:setup`
+* `docker exec app bundle exec rails db:setup`
 * now you can break first command
 
 ## Run
