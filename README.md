@@ -1,24 +1,15 @@
-# README
+## Dependencies
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Docker
+* Docker-compose
 
-Things you may want to cover:
+## Build
 
-* Ruby version
+* cd into projects dir
+* `docker-compose build`
 
-* System dependencies
+## Run
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* cd into projects dir
+* make sure what tcp port - 8080 is free
+* `docker-compose up -d`
