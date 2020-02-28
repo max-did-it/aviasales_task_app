@@ -21,6 +21,7 @@ services:
       RAILS_ENV: 'development'
       MYSQL_USERNAME: 'root'
       MYSQL_PASSWORD: 'toor'
+      MYSQL_HOST: 'mysql'
     entrypoint: "bundle exec puma -C config/puma.rb config.ru"
   mysql:
     container_name: mysql_cont
