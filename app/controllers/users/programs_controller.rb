@@ -3,7 +3,7 @@ class Users::ProgramsController < ApplicationController
   rescue_from ActiveRecord::RecordNotUnique, with: :render_already_exist
 
   def index
-    render json: user.programs.ids
+    render json: user.programs.active.ids
   end
 
   def create

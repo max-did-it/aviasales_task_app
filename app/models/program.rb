@@ -4,7 +4,8 @@ class Program < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
 
-
+  scope :active, ->() { joins(:programs_users).where(programs_users: {active: true}) }
+  
   scope :by_term, ->(term) do 
     joins(:programs_users).
     select(:id, :title, :description, "COUNT(`user_id`) as users_subscribed").

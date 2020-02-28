@@ -11,6 +11,11 @@ Rails.application.routes.draw do
       collection do
         get 'search/:term', action: :search
       end
+      scope module: :programs do
+        member do
+          patch '/users/ban'
+        end
+      end
     end
   end
 end

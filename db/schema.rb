@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2020_02_27_185022) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "programs_users", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "program_id", null: false
-    t.boolean "active"
+  create_table "programs_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "program_id"
+    t.bigint "user_id"
+    t.boolean "active", default: true
     t.index ["program_id", "user_id"], name: "subscribe_index", unique: true
     t.index ["program_id"], name: "index_programs_users_on_program_id"
     t.index ["user_id"], name: "index_programs_users_on_user_id"

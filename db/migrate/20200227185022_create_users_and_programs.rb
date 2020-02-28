@@ -14,13 +14,14 @@ class CreateUsersAndPrograms < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
-    create_join_table :users, :programs do |t|
-      t.index :program_id
-      t.index :user_id
+    create_table :programs_users do |t|
+      t.bigint :program_id
+      t.bigint :user_id
 
-      t.boolean :active
+      t.boolean :active, default: :true
     end
-
+    add_index :programs_users, :program_id
+    add_index :programs_users, :user_id
     add_index :programs_users, [:program_id, :user_id], name: :subscribe_index, unique: true
   end
 end
