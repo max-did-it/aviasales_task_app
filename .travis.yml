@@ -1,6 +1,8 @@
 language: ruby
 rvm:
  - 2.5.5
+services:
+  - mysql
 install:
   - bundle install
 script:
