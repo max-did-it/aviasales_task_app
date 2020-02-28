@@ -1,6 +1,7 @@
 version: '3'
 services:
   app:
+    container_name: app
     build: 
       context: '.'
       dockerfile: 'app.Dockerfile'
@@ -17,14 +18,22 @@ services:
       - mysql
 
     environment:
-      RAILS_ENV: development
+      RAILS_ENV: 'development'
+      MYSQL_USERNAME: 'root'
+      MYSQL_PASSWORD: 'toor'
     entrypoint: "bundle exec puma -C config/puma.rb config.ru"
   mysql:
+    container_name: mysql_cont
     image: mysql:5.7
     hostname: mysql
+    volumes:
+      - mysql_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 'toor'
     networks:
       - aviasales
 networks:
   aviasales:
+volumes:
+  mysql_data:
+    driver: local

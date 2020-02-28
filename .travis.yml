@@ -3,7 +3,12 @@ rvm:
  - 2.5.5
 services:
   - mysql
+env:
+  - MYSQL_USERNAME=travis
+  - MYSQL_HOST=127.0.0.1
 install:
   - bundle install
+before_script:
+  - bundle exec rails db:test:prepare
 script:
   - bundle exec rspec
