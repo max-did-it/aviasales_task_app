@@ -4,9 +4,10 @@ rvm:
 services:
   - mysql
 env:
-  - RAILS_ENV=test
-  - MYSQL_USERNAME=travis
-  - MYSQL_HOST=127.0.0.1
+  global:
+    - RAILS_ENV=test
+    - MYSQL_USERNAME=travis
+    - MYSQL_HOST=127.0.0.1
 install:
   - bundle install
 before_script:
