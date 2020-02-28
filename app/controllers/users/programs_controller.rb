@@ -1,8 +1,9 @@
 class Users::ProgramsController < ApplicationController
   default_serializer Users::ProgramBlueprint
   rescue_from ActiveRecord::RecordNotUnique, with: :render_already_exist
+
   def index
-    render json: default_serializer.render(user.programs)
+    render json: user.programs.ids
   end
 
   def create
