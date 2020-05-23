@@ -6,7 +6,7 @@ ruby '2.5.5'
 gem 'rack-cors'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'mysql2', '>= 0.4.4'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'blueprinter'
 
 group :development, :test do
